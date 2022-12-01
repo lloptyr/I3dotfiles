@@ -23,6 +23,7 @@ Fonts:
 
 - [System San Francisco Display](https://github.com/supermarin/YosemiteSanFranciscoFont)
 - [Fort Awesome](https://fortawesome.com/)
+- [Weather Icons](https://erikflowers.github.io/weather-icons/)
 
 Wallpapers:
 
