@@ -8,11 +8,16 @@
 # i3 config file (v4)
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
-exec_always --no-startup-id xrandr --output DisplayPort-0 --primary --pos 1920x0  --mode 2560x1440 --rate 164.83 --output HDMI-A-0 --pos 0x360
+#exec_always --no-startup-id xrandr --output DisplayPort-0 --primary --pos 1920x0  --mode 2560x1440 --rate 164.83 --output HDMI-A-0 --pos 0x360
 
+output * adaptive_sync on
+output * bg ~/Pictures/Wallpaper/desktop.png fill
 set $mod Mod4
-set $sm HDMI-A-0
-set $pm DisplayPort-0
+set $sm HDMI-A-1
+set $pm DP-1
+output $pm pos 1920,0 res 2560x1440
+output $sm pos 0,360
+input type:keyboard xkb_numlock enabled
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -136,26 +141,26 @@ set $ws19 "19:recording"
 set $ws20 "20:slack"
 
 # Set Workspaces to monitors
-workspace 1 output $pm
-workspace 2 output $pm
-workspace 3 output $pm
-workspace 4 output $pm
-workspace 5 output $pm
-workspace 6 output $pm
-workspace 7 output $pm
-workspace 8 output $pm
-workspace 9 output $pm
-workspace 10 output $pm
-workspace 11 output $sm
-workspace 12 output $sm
-workspace 13 output $sm
-workspace 14 output $sm
-workspace 15 output $sm
-workspace 16 output $sm
-workspace 17 output $sm
-workspace 18 output $sm
-workspace 19 output $sm
-workspace 20 output $sm
+workspace $ws1 output $pm
+workspace $ws2 output $pm
+workspace $ws3 output $pm
+workspace $ws4 output $pm
+workspace $ws5 output $pm
+workspace $ws6 output $pm
+workspace $ws7 output $pm
+workspace $ws8 output $pm
+workspace $ws9 output $pm
+workspace $ws10 output $pm
+workspace $ws11 output $sm
+workspace $ws12 output $sm
+workspace $ws13 output $sm
+workspace $ws14 output $sm
+workspace $ws15 output $sm
+workspace $ws16 output $sm
+workspace $ws17 output $sm
+workspace $ws18 output $sm
+workspace $ws19 output $sm
+workspace $ws20 output $sm
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
@@ -292,7 +297,8 @@ client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color      
 #}
 
 #polybar
-exec_always --no-startup-id ~/.config/polybar/launch.sh
+# exec_always --no-startup-id ~/.config/polybar/launch.sh
+# https://github.com/elkowar/eww
 
 #Settings
 focus_follows_mouse no
@@ -309,17 +315,17 @@ exec code
 exec thunderbird
 exec firefox
 exec steam
-exec_always feh --bg-scale ~/Pictures/Wallpaper/desktop.png
-exec picom -f --config ~/.config/example.picom.conf
+#exec_always feh --bg-scale ~/Pictures/Wallpaper/desktop.png
+#exec picom -f --config ~/.config/example.picom.conf
 exec slack
-exec flatpak run us.zoom.Zoom
+#exec flatpak run us.zoom.Zoom
 exec pavucontrol
 exec ~/.joplin/Joplin.AppImage
-exec xset s off && xset -dpms
+#exec xset s off && xset -dpms
 #exec kitty sudo apt update && kitty sudo apt upgrade
 
 #Rofi
-bindsym $mod+d exec rofi -show run #-lines 3 -eh 2 -width 100 -padding 800 -opacity 85 -bw 0 -bc $"bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "System San Francisco Display 18"
+bindsym $mod+d exec rofi -show run 
 
 #Keybound programs
 bindsym $mod+mod2+KP_0 exec kitty sudo apt update && kitty sudo apt upgrade && kitty flatpak update

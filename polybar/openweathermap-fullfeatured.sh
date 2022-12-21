@@ -2,24 +2,24 @@
 
 get_icon() {
     case $1 in
-        # Icons for weather-icons
-        01d) icon="";;
-        01n) icon="";;
-        02d) icon="";;
-        02n) icon="";;
-        03*) icon="";;
-        04*) icon="";;
-        09d) icon="";;
-        09n) icon="";;
-        10d) icon="";;
-        10n) icon="";;
-        11d) icon="";;
-        11n) icon="";;
-        13d) icon="";;
-        13n) icon="";;
-        50d) icon="";;
-        50n) icon="";;
-        *) icon="";
+        # Icons for Nerd Fonts
+        01d) icon="";;
+        01n) icon="望";;
+        02d) icon="";;
+        02n) icon="";;
+        03*) icon="摒";;
+        04*) icon="";;
+        09d) icon="";;
+        09n) icon="";;
+        10d) icon="";;
+        10n) icon="";;
+        11d) icon="";;
+        11n) icon="";;
+        13d) icon="";;
+        13n) icon="";;
+        50d) icon="";;
+        50n) icon="";;
+        *) icon="";
 
         # Icons for Font Awesome 5 Pro
         #01d) icon="";;
@@ -89,11 +89,11 @@ if [ -n "$current" ] && [ -n "$forecast" ]; then
 
 
     if [ "$current_temp" -gt "$forecast_temp" ]; then
-        trend=""
+        trend=""
     elif [ "$forecast_temp" -gt "$current_temp" ]; then
-        trend=""
+        trend=""
     else
-        trend=""
+        trend=""
     fi
 
 
@@ -102,11 +102,11 @@ if [ -n "$current" ] && [ -n "$forecast" ]; then
     now=$(date +%s)
 
     if [ "$sun_rise" -gt "$now" ]; then
-        daytime=" $(get_duration "$((sun_rise-now))")"
+        daytime=" $(get_duration "$((sun_rise-now))")"
     elif [ "$sun_set" -gt "$now" ]; then
-        daytime=" $(get_duration "$((sun_set-now))")"
+        daytime=" $(get_duration "$((sun_set-now))")"
     else
-        daytime=" $(get_duration "$((sun_rise-now))")"
+        daytime=" $(get_duration "$((sun_rise-now))")"
     fi
 
     echo "$(get_icon "$current_icon") $current_temp$SYMBOL  $trend  $(get_icon "$forecast_icon") $forecast_temp$SYMBOL   $daytime"
