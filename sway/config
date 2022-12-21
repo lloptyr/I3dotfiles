@@ -206,33 +206,58 @@ bindsym $mod+Shift+F8 move container to workspace number $ws18
 bindsym $mod+Shift+F9 move container to workspace number $ws19
 bindsym $mod+Shift+F10 move container to workspace number $ws20
 
-assign [class="Code"] $ws1 #VSCode
-for_window [class="firefox"] move to workspace $ws3 #Firefox
-assign [class="discord"] $ws12 #Discord
-assign [class="Slack"] $ws20 #SLACK
-assign [class="zoom"] $ws4 #ZOOM
-assign [class="thunderbird"] $ws16 #Thunderbird
+#VSCode
+assign [class="Code"] $ws1 
+#Firefox
+for_window [class="firefox"] move to workspace $ws3 
+#Discord
+assign [class="discord"] $ws12 
+#SLACK
+assign [class="Slack"] $ws20 
+#ZOOM
+assign [class="zoom"] $ws4 
+#Thunderbird
+assign [class="thunderbird"] $ws16 
 for_window [class="thunderbird"] move to workspace $ws16
-for_window [class="Spotify"] move to workspace $ws14 #Spotify
-for_window [class="Steam"] move to workspace $ws11 #Steam
-assign [class="obs"] $ws19 #OBS
-for_window [class="Pavucontrol"] move to workspace $ws18 #Pavucontrol
-for_window [class="Joplin"] move to workspace $ws2 #Joplin
-for_window [class="steam_app_*"] move to workspace $ws5 #Games
-assign [class="steam_app_*"] $ws5 #Games
-assign [class="7DaysToDie.x86_64"] $ws5 #7D2D
-assign [class="Celeste.bin.x86_64"] $ws5 #Celeste
-assign [class="Stardew Valley"] $ws5 #Stardew
-assign [class="Minecraft*"] $ws6 #minecraft
-assign [class="libreoffice*"]$ws7 #libreoffice
-assign [class="cpw-mods-bootstraplauncher-BootstrapLauncher"]$ws17 #MCServer
-for_window [class="minecraft-launcher"] move to workspace $ws17 #minecraft launcher
-assign [class="WizardOfLegend.x86_64"] $ws5 #Wizard of legend
-assign [class="VirtualBox Manager"]$ws15 #Virtbox manager
-for_window [class="VirtualBox Machine"] move to workspace $ws8 #Virtbox Machine
-assign [class="kdenlive"]$ws9 #Kdenlive
-for_window [class="Cockatrice"] move to workspace $ws5 #cockatrice
-for_window [class="slimerancher.exe"] move to workspace $ws5 #slimeRancher
+ #Spotify
+for_window [class="Spotify"] move to workspace $ws14
+#Steam
+for_window [class="Steam"] move to workspace $ws11 
+#OBS
+assign [class="obs"] $ws19 
+#Pavucontrol
+for_window [class="Pavucontrol"] move to workspace $ws18 
+ #Joplin
+for_window [class="Joplin"] move to workspace $ws2
+#Games
+for_window [class="steam_app_*"] move to workspace $ws5 
+assign [class="steam_app_*"] $ws5
+#7D2D
+assign [class="7DaysToDie.x86_64"] $ws5 
+#Celeste
+assign [class="Celeste.bin.x86_64"] $ws5 
+#Stardew
+assign [class="Stardew Valley"] $ws5 
+#minecraft
+assign [class="Minecraft*"] $ws6 
+#libreoffice
+assign [class="libreoffice*"] $ws7 
+#MCServer
+assign [class="cpw-mods-bootstraplauncher-BootstrapLauncher"] $ws17 
+#minecraft launcher
+for_window [class="minecraft-launcher"] move to workspace $ws17 
+#Wizard of legend
+assign [class="WizardOfLegend.x86_64"] $ws5 
+#Virtbox manager
+assign [class="VirtualBox Manager"] $ws15 
+#Virtbox Machine
+for_window [class="VirtualBox Machine"] move to workspace $ws8 
+#Kdenlive
+assign [class="kdenlive"] $ws9 
+#cockatrice
+for_window [class="Cockatrice"] move to workspace $ws5 
+#slimeRancher
+for_window [class="slimerancher.exe"] move to workspace $ws5 
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -299,6 +324,9 @@ client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color      
 #polybar
 # exec_always --no-startup-id ~/.config/polybar/launch.sh
 # https://github.com/elkowar/eww
+#Eww
+exec ./eww/target/release/eww daemon
+exec ./eww/target/release/eww open bar
 
 #Settings
 focus_follows_mouse no
