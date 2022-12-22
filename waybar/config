@@ -1,22 +1,26 @@
 {
 	"layer": "top",
-	"position": "bottom",
+	"position": "top",
+	"passthrough": false,
 	"margin-bottom": 0,
+	"margin-top": 0,
 	"margin-left": 8,
 	"margin-right": 7,
 	"spacing": 4,
 	"modules-left": [
 		"custom/power",
-		"sway/workspaces"
+		"custom/spotify"
 	],
 	"modules-center": [
-		"custom/spotify"
+		"custom/arch-pill",
+		"sway/workspaces"
 	],
 	"modules-right": [
 		"cpu",
 		"memory",
 		"pulseaudio",
-		"clock"
+		"clock",
+		"tray"
 	],
 	"custom/spotify": {
 		"interval": 1,
@@ -26,11 +30,12 @@
 		"escape": true
 	},
 	"sway/workspaces": {
-		"on-click": "activate",
+		"disable-click": false,
 		"disable-scroll": true,
-		"all-outputs": true,
+		"all-outputs": false,
+		"disable-auto-back-and-forth": true,
 		"format": "{icon}",
-		"persistent_workspaces": {},
+		"disable-markup": true,
 		"format-icons": {
 			"1:code": "",
 			"2:joplin": "",
@@ -148,7 +153,7 @@
 	},
 	"custom/power": {
 		"format": "",
-		"on-click": "swaynag -t warning -m '襤 Power Menu Options' -b ' 﫼 Logout ' 'swaymsg exit' -z '  Suspend ' 'sleep 9 && systemctl hybrid-sleep && swaylock-blur' -b '  Restart ' 'systemctl reboot' -b ' 襤 Shutdown '  'systemctl poweroff'"
+		"on-click": "swaynag -t warning -m ' Power Menu Options' -b ' 﫼 Logout ' 'swaymsg exit' -z '  Suspend ' 'sleep 9 && systemctl hybrid-sleep && swaylock-blur' -b '  Restart ' 'systemctl reboot' -b '  Shutdown '  'systemctl poweroff'"
 	},
 	"clock": {
 		"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
@@ -157,7 +162,7 @@
 	},
 	"custom/arch-pill": {
 		"format": "",
-		"on-click": "rofi --show run",
+		"on-click": "rofi -show run",
 		"tooltip": false
 	}
 }
