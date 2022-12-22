@@ -52,7 +52,7 @@ get_duration() {
 
 }
 
-KEY=""
+KEY="e22de920635cedc329510ec60621f1af"
 CITY="Seattle"
 UNITS="imperial"
 SYMBOL="°"

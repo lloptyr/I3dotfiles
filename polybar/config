@@ -490,7 +490,6 @@ exec = ~/.config/polybar/openweathermap-fullfeatured.sh
 interval = 60
 
 [module/powermenu]
-
 type = custom/menu
 expand-right = true
 
