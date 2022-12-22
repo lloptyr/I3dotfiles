@@ -1,0 +1,163 @@
+{
+	"layer": "top",
+	"position": "bottom",
+	"margin-bottom": 0,
+	"margin-left": 8,
+	"margin-right": 7,
+	"spacing": 4,
+	"modules-left": [
+		"custom/power",
+		"sway/workspaces"
+	],
+	"modules-center": [
+		"custom/spotify"
+	],
+	"modules-right": [
+		"cpu",
+		"memory",
+		"pulseaudio",
+		"clock"
+	],
+	"custom/spotify": {
+		"interval": 1,
+		"return-type": "json",
+		"exec": "~/.config/waybar/modules/spotify.sh",
+		"exec-if": "pgrep spotify",
+		"escape": true
+	},
+	"sway/workspaces": {
+		"on-click": "activate",
+		"disable-scroll": true,
+		"all-outputs": true,
+		"format": "{icon}",
+		"persistent_workspaces": {},
+		"format-icons": {
+			"1:code": "",
+			"2:joplin": "",
+			"3:browser": "",
+			"4:zoom": "",
+			"5:games": "",
+			"6:minecraft": "",
+			"7:wordprocessor": "",
+			"8:VirtualMachine": "",
+			"9:kdenlive": "",
+			"10:terminal": "",
+			"11:steam": "",
+			"12:discord": "ﭮ",
+			"13:browser2": "",
+			"14:spotify": "",
+			"15:VirtualManager": "煉",
+			"16:email": "",
+			"17:server": "",
+			"18:pulse": "",
+			"19:recording": "",
+			"20:slack": "",
+			"urgent": "",
+			"focused": "",
+			"default": ""
+		}
+	},
+	"keyboard-state": {
+		"numlock": true,
+		"capslock": true,
+		"format": "{name} {icon}",
+		"format-icons": {
+			"locked": "",
+			"unlocked": ""
+		}
+	},
+	"sway/mode": {
+		"format": "<span style=\"italic\">{}</span>"
+	},
+	"tray": {
+		"spacing": 4
+	},
+	"cpu": {
+		"interval": 1,
+		"format": "{usage}% ",
+		"tooltip": false
+	},
+	"memory": {
+		"interval": 1,
+		"format": "{}% "
+	},
+	"temperature": {
+		"critical-threshold": 80,
+		"format": "{temperatureC}°C {icon}",
+		"format-icons": [
+			"",
+			"",
+			""
+		]
+	},
+	"backlight": {
+		"format": "{percent}% {icon}",
+		"format-icons": [
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			""
+		]
+	},
+	"network": {
+		"format-wifi": "",
+		"format-ethernet": "",
+		"tooltip-format": "",
+		"format-linked": "",
+		"format-disconnected": "⚠",
+		"format-alt": "{ifname}: {ipaddr}/{cidr}"
+	},
+	"pulseaudio": {
+		"scroll-step": 5,
+		"format": "{icon} {volume}%",
+		"format-bluetooth": "{volume}% {icon} {format_source}",
+		"format-bluetooth-muted": " {icon} {format_source}",
+		"format-muted": " {format_source}",
+		"format-source": "{volume}%\n",
+		"format-source-muted": "",
+		"format-icons": {
+			"headphone": "",
+			"hands-free": "",
+			"headset": "",
+			"phone": "",
+			"portable": "",
+			"car": "",
+			"default": [
+				"",
+				"",
+				""
+			]
+		},
+		"on-click": "pavucontrol"
+	},
+	"custom/media": {
+		"format": " {icon} {} ",
+		"return-type": "json",
+		"max-length": 40,
+		"format-icons": {
+			"spotify": "",
+			"default": "🎜"
+		},
+		"escape": true,
+		"exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null"
+	},
+	"custom/power": {
+		"format": "",
+		"on-click": "swaynag -t warning -m '襤 Power Menu Options' -b ' 﫼 Logout ' 'swaymsg exit' -z '  Suspend ' 'sleep 9 && systemctl hybrid-sleep && swaylock-blur' -b '  Restart ' 'systemctl reboot' -b ' 襤 Shutdown '  'systemctl poweroff'"
+	},
+	"clock": {
+		"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+		"format-alt": "{:%Y-%m-%d}",
+		"format": " {:%e %b %y %H:%M}"
+	},
+	"custom/arch-pill": {
+		"format": "",
+		"on-click": "rofi --show run",
+		"tooltip": false
+	}
+}
