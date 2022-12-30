@@ -215,10 +215,10 @@ assign [class="discord"] $ws12
 #SLACK
 assign [class="Slack"] $ws20 
 #ZOOM
-assign [class="zoom"] $ws4 
+assign [app_id="zoom"] $ws4 
 #Thunderbird
-assign [class="thunderbird"] $ws16 
-for_window [class="thunderbird"] move to workspace $ws16
+assign [app_id="thunderbird"] $ws16 
+for_window [app_id="thunderbird"] move to workspace $ws16
  #Spotify
 for_window [class="Spotify"] move to workspace $ws14
 #Steam
@@ -226,9 +226,9 @@ for_window [class="Steam"] move to workspace $ws11
 #OBS
 assign [class="obs"] $ws19 
 #Pavucontrol
-for_window [class="Pavucontrol"] move to workspace $ws18 
+for_window [app_id="pavucontrol"] move to workspace $ws18 
  #Joplin
-for_window [class="Joplin"] move to workspace $ws2
+assign [class="Joplin"] $ws2
 #Games
 for_window [class="steam_app_*"] move to workspace $ws5 
 assign [class="steam_app_*"] $ws5
@@ -241,11 +241,11 @@ assign [class="Stardew Valley"] $ws5
 #minecraft
 assign [class="Minecraft*"] $ws6 
 #libreoffice
-assign [class="libreoffice*"] $ws7 
+assign [app_id="libreoffice*"] $ws7 
 #MCServer
 assign [class="cpw-mods-bootstraplauncher-BootstrapLauncher"] $ws17 
 #minecraft launcher
-for_window [class="minecraft-launcher"] move to workspace $ws17 
+for_window [class="Minecraft Launcher"] move to workspace $ws17 
 #Wizard of legend
 assign [class="WizardOfLegend.x86_64"] $ws5 
 #Virtbox manager
@@ -253,9 +253,9 @@ assign [class="VirtualBox Manager"] $ws15
 #Virtbox Machine
 for_window [class="VirtualBox Machine"] move to workspace $ws8 
 #Kdenlive
-assign [class="kdenlive"] $ws9 
+assign [app_id="kdenlive"] $ws9 
 #cockatrice
-for_window [class="Cockatrice"] move to workspace $ws5 
+for_window [app_id="de.cockatrice.cockatrice"] move to workspace $ws5 
 #slimeRancher
 for_window [class="slimerancher.exe"] move to workspace $ws5 
 
@@ -350,7 +350,7 @@ exec steam
 #exec_always feh --bg-scale ~/Pictures/Wallpaper/desktop.png
 #exec picom -f --config ~/.config/example.picom.conf
 exec slack
-#exec flatpak run us.zoom.Zoom
+exec flatpak run us.zoom.Zoom
 exec pavucontrol
 exec ~/.joplin/Joplin.AppImage
 #exec xset s off && xset -dpms
